@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.24)
 project(Base)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-include_directories(${CMAKE_SOURCE_DIR})
+set(SRC_LIST Base/strings/string_piece.cc)
 
-add_library(Base SHARED base/library.cpp)
+include_directories(${CMAKE_SOURCE_DIR} Base
+                                        Base/gen)
+
+add_library(Base SHARED ${SRC_LIST})
